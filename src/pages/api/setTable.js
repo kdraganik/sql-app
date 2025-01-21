@@ -8,7 +8,7 @@ export default async function handler(req, res) {
     driver: sqlite3.Database
   });
 
-  const people = await db.all("SELECT * FROM people");
+  db.run("INSERT INTO users (username, email, password) VALUES ('kdraganik', 'karol.draganik@gmail.com', 'password123')")
 
-  res.status(200).json({ people: people });
+  res.status(200).json("OK");
 }
