@@ -1,4 +1,3 @@
-import styles from '../styles/Home.module.css';
 import { useEffect, useState } from 'react';
 import Form from '../components/form';
 
@@ -27,7 +26,7 @@ export default function Home() {
   }
 
   return (
-    <div className={styles.container}>
+    <div className="container">
       <h1>Login</h1>
       {isLoginSuccessful ? <p>Login successful!</p>
       : <Form checkPassword={checkPassword}></Form>
