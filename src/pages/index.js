@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import Form from '../components/form';
+import MainView from '@/views/MainView';
+import LoginView from '@/views/LoginView';
 
 export default function Home() {
   const [users, setUsers] = useState([]);
@@ -27,11 +28,11 @@ export default function Home() {
 
   return (
     <div className="container">
-      <h1>Login</h1>
-      {isLoginSuccessful ? <p>Login successful!</p>
-      : <Form checkPassword={checkPassword}></Form>
+      {
+        isLoginSuccessful 
+        ? <MainView/>
+        : <LoginView checkPassword={checkPassword} error={error}/>
       }
-      {error != "" ? <div>{error}</div> : ""}
     </div>
   );
 }

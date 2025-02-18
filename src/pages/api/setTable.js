@@ -8,7 +8,7 @@ export default async function handler(req, res) {
     driver: sqlite3.Database
   });
 
-  db.run("INSERT INTO users (username, email, password) VALUES ('kdraganik', 'karol.draganik@gmail.com', 'password123')")
+  db.run("CREATE TABLE IF NOT EXISTS notes (id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT, content TEXT)");
 
   res.status(200).json("OK");
 }
